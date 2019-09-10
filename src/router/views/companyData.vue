@@ -1,5 +1,7 @@
 <template>
-  <h1>Hello world!</h1>
+  <div>
+    <h2>Company Data</h2>
+  </div>
 </template>
 
 <script>
