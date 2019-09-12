@@ -3,11 +3,17 @@
   <div class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">Home</li>
-      <li class="breadcrumbs__item">Company Page</li>
+      <li class="breadcrumbs__item">{{currentPage}}</li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    currentPage: function() {
+      return this.$route.meta.title;
+    }
+  }
+};
 </script>
