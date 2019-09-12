@@ -4,9 +4,9 @@
     <breadcrumbs></breadcrumbs>
     <div class="content">
       <sidenav></sidenav>
-      <div class="main">
+      <main class="main">
         <router-view></router-view>
-      </div>
+      </main>
     </div>
     <footer-v></footer-v>
   </div>
