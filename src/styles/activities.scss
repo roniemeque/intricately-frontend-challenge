@@ -1,0 +1,18 @@
+.activity {
+  display: grid;
+  grid-template-columns: 20% 10% 60%;
+  grid-column-gap: 1rem;
+  font-size: 1.4rem;
+  &__date {
+    color: $grey;
+  }
+  &__text {
+    .replacing {
+      color: $brand-secondary;
+    }
+    .replaced {
+      color: $grey;
+      text-decoration: line-through;
+    }
+  }
+}

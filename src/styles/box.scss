@@ -1,0 +1,21 @@
+.box {
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 4px;
+  background: white;
+  &__top {
+    padding: 1.5rem;
+    text-transform: uppercase;
+    color: $grey;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgb(231, 231, 231);
+  }
+
+  &__item--bordered {
+    font-size: 1.5rem;
+    &:not(:first-of-type) {
+      border-top: 1px solid rgb(231, 231, 231);
+    }
+    padding: 1rem;
+  }
+}
