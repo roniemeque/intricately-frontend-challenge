@@ -1,12 +1,12 @@
 <template>
   <div>
     <navbar></navbar>
-    <div>
-      <p>
-        <router-link to="/microsoft/data">Company data</router-link>
-        <router-link to="/microsoft">Company page</router-link>
-      </p>
-      <router-view></router-view>
+    <breadcrumbs></breadcrumbs>
+    <div class="content">
+      <sidenav></sidenav>
+      <div class="main">
+        <router-view></router-view>
+      </div>
     </div>
     <footer-v></footer-v>
   </div>
@@ -15,11 +15,15 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import Sidenav from "./components/Sidenav.vue";
+import Breadcrumbs from "./components/Breadcrumbs.vue";
 
 export default {
   components: {
     navbar: Navbar,
-    "footer-v": Footer
+    "footer-v": Footer,
+    sidenav: Sidenav,
+    breadcrumbs: Breadcrumbs
   }
 };
 </script>
