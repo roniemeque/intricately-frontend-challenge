@@ -1,3 +1,4 @@
+<!-- no functionality! only markup and styling -->
 <template>
   <nav class="nav">
     <img src="/assets/images/logo-pink@2x.png" alt class="logo" />
