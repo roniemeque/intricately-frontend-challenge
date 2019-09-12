@@ -1,0 +1,41 @@
+.company-page {
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+  &__desc {
+    margin-top: 2rem;
+  }
+}
+
+.company-logo {
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 3px 3px rgba(143, 92, 92, 0.2);
+  padding: 1.5rem;
+  &__pic {
+    max-width: 4rem;
+  }
+}
+
+.company-info {
+  &__title {
+    font-weight: normal;
+    font-size: 2.8rem;
+  }
+  &__location {
+    display: flex;
+    align-items: center;
+    color: $grey;
+  }
+  &__location-text {
+    font-size: 1.4rem;
+  }
+  &__location-icon {
+    max-width: 1rem;
+    margin-right: 1rem;
+  }
+}

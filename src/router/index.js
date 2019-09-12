@@ -1,4 +1,7 @@
+import Vue from "vue";
 import VueRouter from "vue-router";
+
+Vue.use(VueRouter);
 import CompanyData from "./views/companyData.vue";
 import CompanyPage from "./views/companyPage.vue";
 import CompanyTable from "./views/companyTable.vue";

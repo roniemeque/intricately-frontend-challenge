@@ -1,12 +1,12 @@
 import "Styles/main.scss";
 import Vue from "vue";
-import VueRouter from "vue-router";
 import router from "./router";
 import App from "./App.vue";
 
-Vue.use(VueRouter);
+import store from "./store";
 
 new Vue({
   router,
+  store,
   render: createElement => createElement(App),
 }).$mount("#app");
