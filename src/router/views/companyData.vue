@@ -126,7 +126,7 @@ export default {
       company_spend_ability_min: "",
       company_spend_ability_max: "",
       additional_notes: "",
-      notesModalActive: true
+      notesModalActive: false
     };
   },
   methods: {
