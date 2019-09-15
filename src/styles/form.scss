@@ -1,0 +1,32 @@
+.form-errors {
+  margin-top: 1rem;
+  color: #ff4136;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.form-label {
+  text-transform: uppercase;
+  color: $grey;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.form-input {
+  min-height: 2rem;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  max-width: 40rem;
+  margin-top: 0.7rem;
+  display: flex;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  &__input {
+    flex: 1;
+  }
+}
