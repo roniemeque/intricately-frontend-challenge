@@ -42,7 +42,7 @@
               id="company-spend-ability-min"
               v-model="company_spend_ability_min"
               placeholder="e.g. $150,000"
-              @blur="() => checkSpend('company_spend_ability_min', 'Company Spend Ability Minimum')"
+              @blur="() => checkSpend('company_spend_ability_min', 'Company Spend Ability Minimum', false, company_spend_ability_max)"
               @focus="() => clearField('company_spend_ability_min')"
             />
             <input
@@ -50,8 +50,8 @@
               class="form-input__input"
               id="company-spend-ability-max"
               v-model="company_spend_ability_max"
-              placeholder
-              @blur="() => checkSpend('company_spend_ability_max', 'Company Spend Ability Maximum')"
+              placeholder="$330,000"
+              @blur="() => checkSpend('company_spend_ability_max', 'Company Spend Ability Maximum', company_spend_ability_min, false)"
               @focus="() => clearField('company_spend_ability_max')"
             />
           </div>
@@ -74,7 +74,8 @@ const formatDollars = new Intl.NumberFormat("en-US", {
 
 const convertToValidNumber = value => {
   const withoutComma = value.replace(",", "");
-  const number = parseFloat(withoutComma);
+  const withoutDollar = withoutComma.replace("$", "");
+  const number = parseFloat(withoutDollar);
   return number > 0 ? number : false;
 };
 
@@ -95,12 +96,20 @@ export default {
         this.errors.push("Company Name is required.");
       }
     },
-    checkSpend: function(field, fieldName) {
+    checkSpend: function(field, fieldName, minValue, maxValue) {
       this.errors = [];
       if (this[field]) {
         const fixedValue = convertToValidNumber(this[field]);
         if (fixedValue) {
           this[field] = formatDollars.format(fixedValue);
+
+          if (minValue && fixedValue < convertToValidNumber(minValue)) {
+            this.errors.push(`${fieldName} is below the minimum value.`);
+          }
+
+          if (maxValue && fixedValue > convertToValidNumber(maxValue)) {
+            this.errors.push(`${fieldName} is above the maximum value.`);
+          }
         } else {
           this.errors.push(`${fieldName} is invalid.`);
         }
