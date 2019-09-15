@@ -20,13 +20,18 @@
   min-height: 2rem;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 4px;
-  padding: 0.8rem 1rem;
   display: flex;
   max-width: 40rem;
   margin-top: 0.7rem;
   display: flex;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  &__input {
+  &__input,
+  &__textarea {
     flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+  }
+  &__textarea {
+    min-height: 16rem;
   }
 }

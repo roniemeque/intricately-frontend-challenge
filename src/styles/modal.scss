@@ -1,0 +1,35 @@
+.modal {
+  position: absolute;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    position: relative;
+    min-width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    .form-group {
+      flex: 1;
+      .form-input {
+        max-width: initial;
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}

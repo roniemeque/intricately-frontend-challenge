@@ -56,12 +56,50 @@
             />
           </div>
         </div>
+        <div class="form-group">
+          <label for="additional-notes" class="form-label">Notes</label>
+          <div class="form-input">
+            <textarea
+              type="text"
+              class="form-input__textarea"
+              id="additional-notes"
+              v-model="additional_notes"
+              placeholder="e.g. Good Tech Company"
+              @click="() => toggleNotesModal(true)"
+            />
+          </div>
+        </div>
       </form>
     </div>
     <div class="form-errors" v-if="errors.length">
       <ul>
         <li v-for="error in errors" :key="error">{{ error }}</li>
       </ul>
+    </div>
+
+    <div class="modal" v-if="notesModalActive">
+      <div class="modal__content">
+        <div class="form-group">
+          <label for="additional-notes" class="form-label">Additional Notes</label>
+          <div class="form-input">
+            <textarea
+              type="text"
+              class="form-input__textarea"
+              id="additional-notes"
+              v-model="additional_notes"
+              placeholder="e.g. Good Tech Company"
+              @click="toggleNotesModal"
+            />
+          </div>
+          <button @click="() => toggleNotesModal(false)" class="button">Save</button>
+        </div>
+        <img
+          src="/assets/images/close.png"
+          @click="() => toggleNotesModal(false)"
+          alt
+          class="modal__close"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -86,7 +124,9 @@ export default {
       company_name: "",
       company_spend: "",
       company_spend_ability_min: "",
-      company_spend_ability_max: ""
+      company_spend_ability_max: "",
+      additional_notes: "",
+      notesModalActive: true
     };
   },
   methods: {
@@ -119,6 +159,9 @@ export default {
     },
     clearField: function(field) {
       this[field] = "";
+    },
+    toggleNotesModal: function(value) {
+      this.notesModalActive = value;
     }
   }
 };

@@ -7,4 +7,12 @@
   &__form {
     margin-top: 2rem;
   }
+
+  .modal {
+    .button {
+      align-self: flex-end;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+  }
 }
